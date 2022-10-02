@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:input_decoration/string_extensions.dart';
 
 class NumberField extends StatefulWidget {
   const NumberField({Key? key}) : super(key: key);
@@ -9,9 +11,23 @@ class NumberField extends StatefulWidget {
 
 class _NumberFieldState extends State<NumberField> {
   @override
-  Widget build(BuildContext context) {
-    return Container(
-
-    );
-  }
+  Widget build(BuildContext context)=>TextFormField(
+    keyboardType: TextInputType.numberWithOptions(
+      decimal: true,
+      signed: true,
+    ),
+    validator: (value){
+      if(!value!.isValidDouble()){
+        return 'Geçerli bir ondalık sayı giriniz';
+      }
+    },
+    maxLength: 10,
+    maxLengthEnforcement: MaxLengthEnforcement.enforced,
+    decoration: const InputDecoration(
+      labelText: 'Number Field',
+      helperText: "",
+      hintText: "74",
+      suffix: Text("kg"),
+    ),
+  );
 }
