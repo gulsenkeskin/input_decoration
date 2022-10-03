@@ -28,6 +28,8 @@ class _NumberFieldState extends State<NumberField> {
       helperText: "",
       hintText: "74",
       suffix: Text("kg"),
+      // ya da
+      // suffixText: "kg"
     ),
   );
 }
