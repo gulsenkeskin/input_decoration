@@ -12,7 +12,7 @@ class NumberField extends StatefulWidget {
 class _NumberFieldState extends State<NumberField> {
   @override
   Widget build(BuildContext context)=>TextFormField(
-    keyboardType: TextInputType.numberWithOptions(
+    keyboardType: const TextInputType.numberWithOptions(
       decimal: true,
       signed: true,
     ),
